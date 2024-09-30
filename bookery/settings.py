@@ -170,7 +170,7 @@ CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + REDIS_PORT + "/0"
 CELERY_BEAT_SCHEDULE = {
     'reading_time_statistic': {
         'task': 'user.tasks.reading_time_statistic',
-        'schedule': timedelta(minutes=1),
+        'schedule': timedelta(days=1),
     },
 }
 
