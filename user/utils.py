@@ -19,8 +19,8 @@ def send_activation_email(user):
     """
     uidb64, token = generate_token(user)
     activation_link = f"{settings.FRONTEND_URL}/activate?uidb64={uidb64}&token={token}"
-    subject  = 'Activate Your Account'
-    message = f'Hi {user.username},\n\nPlease activate your account by clicking the link below:\n{activation_link}'
+    subject = "Activate Your Account"
+    message = f"Hi {user.username},\n\nPlease activate your account by clicking the link below:\n{activation_link}"
     send_mail(subject, message, settings.EMAIL_HOST_USER, [user.email])
 
 
@@ -29,10 +29,9 @@ def send_reset_password_email(user):
     Sends a password reset email to the user with a unique reset link.
     """
     uidb64, token = generate_token(user)
-    reset_password_link = f"{settings.FRONTEND_URL}/activate?uidb64={uidb64}&token={token}"
-    subject = 'Password Reset'
-    message = f'Hi {user.username},\n\nPlease reset your password by clicking the link below:\n{reset_password_link}'
+    reset_password_link = (
+        f"{settings.FRONTEND_URL}/activate?uidb64={uidb64}&token={token}"
+    )
+    subject = "Password Reset"
+    message = f"Hi {user.username},\n\nPlease reset your password by clicking the link below:\n{reset_password_link}"
     send_mail(subject, message, settings.EMAIL_HOST_USER, [user.email])
-
-
-

@@ -1,6 +1,3 @@
-
-
-
 from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -14,8 +11,8 @@ def create_user_profile(created, **kwargs):
     """
     Signal receiver that creates a user profile when a new user is created.
     """
-    instance = kwargs['instance']
-    if created and not hasattr(instance, 'profile'):
+    instance = kwargs["instance"]
+    if created and not hasattr(instance, "profile"):
         Profile.objects.create(user=instance)
 
 
@@ -26,6 +23,3 @@ def send_activation_email_(sender, instance, created, **kwargs):
     """
     if created:
         send_activation_email(instance)
-
-
-

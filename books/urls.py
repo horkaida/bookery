@@ -4,9 +4,9 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register('comments', CommentViewSet, basename='comment')
-router.register('books', BookViewSet, basename='book')
+router.register("comments", CommentViewSet, basename="comment")
+router.register("books", BookViewSet, basename="book")
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]

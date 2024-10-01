@@ -9,3 +9,14 @@ celery==5.4.0
 django-celery-beat==2.6.0
 python-dotenv==1.0.1
 django-filter==24.3
+black==24.8.0
+flake8==3.9.0
+pylint==3.3.1
+pylint-plugin-utils==0.6
+pylint-django==2.0.13
+pylint-celery==0.3
+
+
+
+
+

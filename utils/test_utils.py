@@ -8,9 +8,7 @@ def get_jwt_for_user(user):
     refresh = RefreshToken.for_user(user)
     return str(refresh.access_token)
 
+
 def get_auth_headers(access_token):
     """Helper method to include the JWT token in the Authorization header."""
-    return {
-        'HTTP_AUTHORIZATION': f'Bearer {access_token}'
-    }
-
+    return {"HTTP_AUTHORIZATION": f"Bearer {access_token}"}
