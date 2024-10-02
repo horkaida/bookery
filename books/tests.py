@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from rest_framework.test import APITestCase
 from django.urls import reverse
 from rest_framework import status
-from books.models import *
+from books.models import ReadingSession, Comment, LikeComment
 from django.utils import timezone
 
 from utils.test_utils import get_jwt_for_user, get_auth_headers

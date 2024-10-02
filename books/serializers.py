@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework import serializers
 
-from books.models import *
+from books.models import Comment, LikeComment, Category, Book, ReadingSession
 
 
 class ListCommentSerializer(serializers.ListSerializer):

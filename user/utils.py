@@ -8,7 +8,7 @@ from django.utils.http import urlsafe_base64_encode
 def generate_token(user):
     # Generate a time-limited token that is linked to the user's account
     token = default_token_generator.make_token(user)
-    # Encode the user's primary key (user ID) into a base64 string to safely include it in the URL
+    # Encode the user's primary key into a base64 string to safely include in the URL
     uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
     return uidb64, token
 
